@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz sobre Gatos</title>
+</head>
+<body>
+  <h1>Quiz sobre Gatos</h1>
+  
+  <form id="quizForm">
+    <h2>Pergunta 1:</h2>
+    <p>Qual é a raça de gato mais popular do mundo?</p>
+    <input type="radio" name="pergunta1" value="a"> a) Persa<br>
+    <input type="radio" name="pergunta1" value="b"> b) Siamês<br>
+    <input type="radio" name="pergunta1" value="c"> c) Maine Coon<br>
+    
+    <h2>Pergunta 2:</h2>
+    <p>Qual é a expectativa de vida média de um gato doméstico?</p>
+    <input type="radio" name="pergunta2" value="a"> a) 5-8 anos<br>
+    <input type="radio" name="pergunta2" value="b"> b) 10-15 anos<br>
+    <input type="radio" name="pergunta2" value="c"> c) 20-25 anos<br>
+    
+    <h2>Pergunta 3:</h2>
+    <p>Qual é o nome científico do gato doméstico?</p>
+    <input type="radio" name="pergunta3" value="a"> a) Felis catus<br>
+    <input type="radio" name="pergunta3" value="b"> b) Felis silvestris<br>
+    <input type="radio" name="pergunta3" value="c"> c) Felis lynx<br>
+    
+    <br>
+    <button type="button" onclick="verificarRespostas()">Verificar Respostas</button>
+  </form>
+  
+  <div id="resultado"></div>
+  
+  <script>
+    function verificarRespostas() {
+      var respostasCorretas = 0;
+      
+      var resposta1 = document.querySelector('input[name="pergunta1"]:checked').value;
+      var resposta2 = document.querySelector('input[name="pergunta2"]:checked').value;
+      var resposta3 = document.querySelector('input[name="pergunta3"]:checked').value;
+      
+      if (resposta1 === "b") {
+        respostasCorretas++;
+      }
+      
+      if (resposta2 === "b") {
+        respostasCorretas++;
+      }
+      
+      if (resposta3 === "a") {
+        respostasCorretas++;
+      }
+      
+      var resultado = document.getElementById("resultado");
+      resultado.innerHTML = "Você acertou " + respostasCorretas + " de 3 perguntas.";
+    }
+  </script>
+</body>
+</html>
